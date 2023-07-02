@@ -1,0 +1,50 @@
+[
+  {
+    "id": 1,
+    "name": "Mario Kart",
+    "released": 1992,
+    "background_image": "https://www.numerama.com/content/uploads/2017/04/media.jpg",
+    "rating": 4.7,
+    "genres": "racing",
+  },
+  {
+    "id": 2,
+    "name": "SoulCalibur",
+    "released": 1999,
+    "background_image": "https://cdn.akamai.steamstatic.com/steam/apps/544750/ss_7889f8fcbae378a11934a23edde8bcb9e811930e.1920x1080.jpg?t=1646956219",
+    "rating": 4.2,
+    "genres": "fight",
+  },
+  {
+    "id": 3,
+    "name": "Resident Evil",
+    "released": 1996,
+    "background_image": "https://m.media-amazon.com/images/M/MV5BNDhkYmQzZjMtZGNjOC00MjkxLWIyNzktMDY1NzlhYjgzOGNkXkEyXkFqcGdeQXVyNjk4MzQ5Nzc@._V1_.jpg",
+    "rating": 4.1,
+    "genres": "horror",
+  }
+ {
+    "id": 4,
+    "name": "Headhunter",
+    "released": 2001,
+    "background_image": "https://cdn.gamekult.com/optim/images/photos/00/00/14/16/headhunter-screenshot-ME0000141673_2__w830.jpg",
+    "rating": 3.9,
+    "genres": "adventure",
+  }
+ {
+    "id": 5,
+    "name": "Tetris",
+    "released": 1984,
+    "background_image": "https://img.lemde.fr/2019/03/14/0/0/800/448/664/0/75/0/035954b_Hawc03DPqOgQ7Cw3QHuLthV9.jpg",
+    "rating": 4.6,
+    "genres": "puzzle",
+  }
+  {
+    "id": 6,
+    "name": "The Legend of Zelda",
+    "released": 1998,
+    "background_image": "https://www.lacremedugaming.fr/wp-content/uploads/creme-gaming/2022/05/zelda5-e1652090253150-729x410.jpg",
+    "rating": 4.5,
+    "genres": "adventure",
+  }
+]

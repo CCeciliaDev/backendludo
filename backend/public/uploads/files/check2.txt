@@ -1,0 +1,13 @@
+<select id="cupcake-select">
+            {/* Étape 4 : ajoutez une option pour chaque accessoire */}
+            {accessories.map(access => (<option value={access.id}>{access.name}</option>))}
+          </select>
+
+ <ul className="cupcake-list" id="cupcake-list">
+        {/* Étape 2 : répétez ce bloc pour chaque cupcake */}
+        <li className="cupcake-item">
+           {cupcakes.map((cupcake) => (
+          <Cupcake key ={cupcake.id} />))}
+        </li>
+        {/* end of block */}
+      </ul>

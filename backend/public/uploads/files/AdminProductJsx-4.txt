@@ -1,0 +1,144 @@
+import { useState, useEffect } from "react";
+import axios from "axios";
+import "../styles/Adminmodules.css";
+
+export default function AdminProducts() {
+  const [products, setProducts] = useState([]);
+  const [selectedProduct, setSelectedProduct] = useState(null);
+  const [nameProduct, setNameProduct] = useState("");
+  const [descProduct, setDescriptionProduct] = useState("");
+  const [priceProduct, setPriceProduct] = useState("");
+  const [pictureProduct, setPictureProduct] = useState("");
+  const [archivedProduct, setArchiveProduct] = useState(0);
+  const [submitSuccess, setSubmitSuccess] = useState(false);
+
+  useEffect(() => {
+    const fetchProducts = async () => {
+      try {
+        const response = await axios.get("http://localhost:5000/products");
+        setProducts(response.data);
+      } catch (error) {
+        console.error("Erreur lors de la récupération des produits:", error);
+      }
+    };
+
+    fetchProducts();
+  }, []);
+
+  const handleProductSelection = (product) => {
+    setSelectedProduct(product);
+    setNameProduct(product.nameProduct);
+    setDescriptionProduct(product.descProduct);
+    setPriceProduct(product.priceProduct);
+    setPictureProduct(product.pictureProduct);
+    setArchiveProduct(product.archivedProduct);
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    if (!selectedProduct) return;
+
+    try {
+      await axios.put(`http://localhost:5000/products/${selectedProduct.id}`, {
+        nameProduct,
+        descProduct,
+        priceProduct,
+        pictureProduct,
+        archivedProduct,
+      });
+      console.info(selectedProduct);
+      // Update the local state
+      setProducts((prevProducts) =>
+        prevProducts.map((product) =>
+          product.id === selectedProduct.id
+            ? {
+                ...product,
+                nameProduct,
+                descProduct,
+                priceProduct,
+                pictureProduct,
+                archivedProduct,
+              }
+            : product
+        )
+      );
+      setSubmitSuccess(true);
+    } catch (error) {
+      console.error("Erreur lors de la mise à jour du produit:", error);
+    }
+  };
+
+  return (
+    <div className="admin-products">
+      <h3>Modification des produits</h3>
+      <form onSubmit={handleSubmit}>
+        <label htmlFor="Product-selection">Sélectionner un produit :</label>
+        <select
+          id="Product-selection"
+          value={selectedProduct?.id || ""}
+          onChange={(e) => {
+            const product = products.find(
+              (product) => product.id === Number(e.target.value)
+            );
+            if (product) {
+              handleProductSelection(product);
+            }
+          }}
+        >
+          <option value="">Choisir un produit</option>
+          {products.map((product) => (
+            <option key={product.id} value={product.id}>
+              {product.nameProduct}
+            </option>
+          ))}
+        </select>
+        {selectedProduct && (
+          <>
+            <label htmlFor="nameProduct">Nom du produit :</label>
+            <input
+              id="nameProduct"
+              value={nameProduct}
+              onChange={(e) => setNameProduct(e.target.value)}
+            />
+
+            <label htmlFor="descProduct">Description :</label>
+            <textarea
+              id="descProduct"
+              value={descProduct}
+              onChange={(e) => setDescriptionProduct(e.target.value)}
+            />
+
+            <label htmlFor="priceProduct">Prix :</label>
+            <input
+              id="priceProduct"
+              type="text"
+              value={priceProduct}
+              onChange={(e) => setPriceProduct(e.target.value)}
+            />
+
+            <label htmlFor="pictureProduct">URL de l'image :</label>
+            <input
+              id="pictureProduct"
+              value={pictureProduct}
+              onChange={(e) => setPictureProduct(e.target.value)}
+            />
+
+            <label htmlFor="archivedProduct">Archivé :</label>
+            <input
+              id="archivedProduct"
+              type="checkbox"
+              checked={archivedProduct}
+              onChange={(e) => setArchiveProduct(e.target.checked)}
+            />
+          </>
+        )}
+        <button type="submit">Mettre à jour le produit</button>
+      </form>
+      {submitSuccess && (
+        <p className="success-message">
+          Le produit a été mis à jour avec succès.
+        </p>
+      )}
+    </div>
+  );
+}

@@ -1,0 +1,95 @@
+cécilia@DESKTOP-31KMIUJ MINGW64 ~/Documents/Quests/checkpoint03/11-22-remfr-devandjerys-js_checkpoint3 (caillaud_cecilia)
+$ git status
+On branch caillaud_cecilia
+Your branch is up to date with 'origin/caillaud_cecilia'.
+
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        deleted:    .env
+        new file:   backend/src/controllers/boatsController.js
+        new file:   backend/src/controllers/tilesController.js
+        modified:   backend/src/models/BoatManager.js
+        modified:   backend/src/models/TileManager.js
+        modified:   backend/src/router.js
+        modified:   package-lock.json
+        modified:   package.json
+
+Changes not staged for commit:
+
+> template-frontend@0.0.0 lint
+> echo '----- Checking Frontend...' && prettier --debug-check . && eslint --ext .jsx . && echo '----- Done!'
+
+'----- Checking Frontend...'
+.eslintrc.json
+.prettierrc
+index.html
+jsconfig.json
+package-lock.json
+package.json
+src\App.css
+src\App.jsx
+src\components\NavBar.jsx
+src\contexts\CaribbeanContext.jsx
+src\main.jsx
+src\pages\Home.jsx
+src\pages\Map.css
+src\pages\Map.jsx
+src\pages\MoveBoat.jsx
+src\services\api.js
+vite.config.js
+'----- Done!'
+
+> mvc-express@1.0.0 lint
+> echo '----- Checking Backend...' && npx prettier --debug-check . && eslint --ext .js . && echo '----- Done!'
+
+'----- Checking Backend...' 
+.eslintrc.json
+.prettierrc
+index.js
+migrate.js
+package-lock.json
+package.json
+public\assets\css\style.css
+public\index.html
+README.md
+src\app.js
+src\controllers\boatsController.js
+src\controllers\tilesController.js
+src\models\AbstractManager.js
+src\models\BoatManager.js
+src\models\index.js
+src\models\TileManager.js
+src\router.js
+
+C:\Users\cécilia\Documents\Quests\checkpoint03\11-22-remfr-devandjerys-js_checkpoint3\backend\src\controllers\boatsController.js
+  16:3  error  Delete `··`                     prettier/prettier
+  17:3  error  Delete `··`                     prettier/prettier
+  18:1  error  Replace `········` with `····`  prettier/prettier
+  19:1  error  Replace `········` with `····`  prettier/prettier
+  20:7  error  Delete `······`                 prettier/prettier
+  21:1  error  Replace `········` with `····`  prettier/prettier
+  22:1  error  Delete `····`                   prettier/prettier
+  23:1  error  Delete `······`                 prettier/prettier
+  24:7  error  Delete `······`                 prettier/prettier
+  25:1  error  Delete `····`                   prettier/prettier
+  40:6  error  Delete `⏎`                      prettier/prettier
+
+C:\Users\cécilia\Documents\Quests\checkpoint03\11-22-remfr-devandjerys-js_checkpoint3\backend\src\controllers\tilesController.js
+   4:1  error  Replace `↹` with `··`                                               prettier/prettier
+   5:1  error  Replace `↹↹` with `····`                                            prettier/prettier
+   6:1  error  Replace `↹↹` with `····`                                            prettier/prettier
+   7:1  error  Replace `↹↹↹res.send(rows)` with `······res.send(rows);`            prettier/prettier
+   8:1  error  Replace `↹↹` with `····`                                            prettier/prettier
+   9:1  error  Replace `↹↹` with `····`                                            prettier/prettier
+  10:1  error  Replace `↹↹↹console.error(err)` with `······console.error(err);`    prettier/prettier
+  11:1  error  Replace `↹↹↹res.sendStatus(500)` with `······res.sendStatus(500);`  prettier/prettier
+  12:1  error  Replace `↹↹})` with `····});`                                       prettier/prettier
+
+✖ 20 problems (20 errors, 0 warnings)
+  20 errors and 0 warnings potentially fixable with the `--fix` option.
+
+husky - pre-commit hook exited with code 1 (error)
+
+cécilia@DESKTOP-31KMIUJ MINGW64 ~/Documents/Quests/checkpoint03/11-22-remfr-devandjerys-js_checkpoint3 (caillaud_cecilia)
+$ git push
+Everything up-to-date
